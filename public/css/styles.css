@@ -1,0 +1,69 @@
+.navbar-brand {
+    margin-left: 2rem;
+    font-family: "ubuntu",sans-serif;
+    font-size: 2.5rem !important;
+    font-weight: bold;
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+
+ .nav-link {
+    font-size: 1.2rem;
+
+}
+.logo-pic{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.title {
+
+    /* background-color: #cdd6a9; */
+    background-color: #377e80;
+
+    background-image: url("https://www.transparenttextures.com/patterns/diamond-upholstery.png");
+
+    background-repeat: round;
+    padding: 6% 0 7% 0;
+}
+
+#reviews {
+
+    text-align: center;
+    color: #fff;
+}
+
+.studentHomeBody{
+  padding: 30px;
+}
+.studentHomeBody .card{
+  background-color: #f7f3e9;
+}
+
+.about-section{
+    text-align: center;
+    background-color:  #99ccff;
+    padding: 4%;
+    color: white;
+}
+
+.about-text-title{
+    color: #5b5b5b;
+    font-family: "ubuntu",sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.about-text {
+    padding: 2% 4%;
+    font-family: "ubuntu",sans-serif;
+    color: #433d3c;
+}
+
+.row{
+    display: flex;
+    height: 695px;
+}
