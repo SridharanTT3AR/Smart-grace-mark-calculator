@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student View Result</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600,700,900|Ubuntu&display=swap" rel="stylesheet">
+
+  <!-- bootstrapcdn -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <!-- local css -->
+  <link rel="stylesheet" href="/css/studentstyle.css">
+
+
+</head>
+
+    <body>
+
+     <nav class="navbar navbar-expand-lg navbar-light studentnav"  >
+
+     <a class="navbar-brand" href="/student-home/<%= roll %>">Gracemark Allocator</a>
+
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav mr-auto">
+         <li class="nav-item active">
+           <a class="nav-link" href="/student-home/<%= roll %>">Home</a>
+         </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/uploaddoc/<%= roll %>">Upload Files</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/studentViewResult/<%= roll %>">Results</a>
+          </li>
+        </ul>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" target="blank" href="/studentprofile/<%= roll %>"><%= roll %>
+                <img src="https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2019/12/9-Best-Online-Avatars-and-How-to-Make-Your-Own-for-Free-image1-5.png" width="50" height="50"></a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-dark btn-lg" style="margin-top:8px;" href="/" role="button"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+    <div class="uploadpage">
+       <br><br>
+       <div class="infocontainer">
+           <div class="studentInfo">
+                <h4>Name: <%= name %></h4>
+                <h4>RollNumber: <%= roll %></h4>
+                <h4><b>SGPA: <%= cgpa %></b></h4>
+           </div>
+           <div class="gradeTable">
+             <table class="table table-hover table-bordered table-dark table-striped">
+                <thead>
+                  <tr>
+                      <th scope="col">S.no</th>
+                      <th scope="col">COURSEID</th>
+                      <th scope="col">Grade</th>
+                  </tr>
+                </thead>
+                  <tbody>
+                        <%
+                        if(userData.length!=0){
+                        var i=1;
+                        userData.forEach(function(data){
+                        %>
+                        <tr>
+                            <td><%=i; %></td>
+                            <td><%=data.COURSEID %></td>
+                            <td><%=data.GRADE %></td>
+                        </tr>
+                        <%  i++; }) %>
+                        <% } else{ %>
+                            <tr>
+                                <td colspan="7">No Data Found</td>
+                            </tr>
+                        <% } %>
+                 </tbody>
+               </table>
+            </div>
+        </div>
+    </div>
+
+
+   <script src="/js/main.js"></script>
+   <!-- Optional JavaScript -->
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+
+ </body>
+
+ </html>
